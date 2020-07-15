@@ -3,7 +3,8 @@
  *
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
  * tslint:disable
- */ 
-var styles = [""];
-export { styles as styles };
+ */
+
+var styles = ['']
+export { styles }
 //# sourceMappingURL=todo.component.scss.shim.ngstyle.js.map

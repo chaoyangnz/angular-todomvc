@@ -486,11 +486,7 @@ function View_TodoComponent_1(_l) {
 				null,
 				0,
 				NgForOf,
-				[
-					ViewContainerRef,
-					TemplateRef,
-					IterableDiffers,
-				],
+				[ViewContainerRef, TemplateRef, IterableDiffers],
 				{ ngForOf: [0, 'ngForOf'] },
 				null
 			),
