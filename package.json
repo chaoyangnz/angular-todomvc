@@ -12,6 +12,7 @@
 		"start:aot": "es-dev-server --root-dir aot --app-index index.html --node-resolve",
 		"test": "ng test",
 		"lint": "ng lint",
+		"format": "prettier --write .",
 		"e2e": "ng e2e"
 	},
 	"private": true,

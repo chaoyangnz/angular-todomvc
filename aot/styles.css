@@ -71,7 +71,7 @@ hr {
 .quote p:before {
 	content: '“';
 	font-size: 50px;
-	opacity: .15;
+	opacity: 0.15;
 	position: absolute;
 	top: -20px;
 	left: 3px;
@@ -80,7 +80,7 @@ hr {
 .quote p:after {
 	content: '”';
 	font-size: 50px;
-	opacity: .15;
+	opacity: 0.15;
 	position: absolute;
 	bottom: -42px;
 	right: 3px;
@@ -104,7 +104,7 @@ hr {
 .speech-bubble {
 	position: relative;
 	padding: 10px;
-	background: rgba(0, 0, 0, .04);
+	background: rgba(0, 0, 0, 0.04);
 	border-radius: 5px;
 }
 
@@ -114,7 +114,7 @@ hr {
 	top: 100%;
 	right: 30px;
 	border: 13px solid transparent;
-	border-top-color: rgba(0, 0, 0, .04);
+	border-top-color: rgba(0, 0, 0, 0.04);
 }
 
 .learn-bar > .learn {
@@ -124,11 +124,11 @@ hr {
 	left: -300px;
 	padding: 10px;
 	border-radius: 5px;
-	background-color: rgba(255, 255, 255, .6);
+	background-color: rgba(255, 255, 255, 0.6);
 	-webkit-transition-property: left;
 	transition-property: left;
 	-webkit-transition-duration: 500ms;
-	        transition-duration: 500ms;
+	transition-duration: 500ms;
 }
 
 @media (min-width: 899px) {
@@ -160,7 +160,7 @@ button {
 	color: inherit;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	     appearance: none;
+	appearance: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -190,8 +190,7 @@ body {
 	background: #fff;
 	margin: 130px 0 40px 0;
 	position: relative;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .todoapp input::-webkit-input-placeholder {
@@ -248,7 +247,7 @@ body {
 	padding: 16px 16px 16px 60px;
 	border: none;
 	background: rgba(0, 0, 0, 0.003);
-	box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 }
 
 .main {
@@ -330,7 +329,7 @@ body {
 	border: none; /* Mobile Safari */
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	     appearance: none;
+	appearance: none;
 }
 
 .todo-list li .toggle {
@@ -417,11 +416,9 @@ body {
 	left: 0;
 	height: 50px;
 	overflow: hidden;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-	            0 8px 0 -3px #f6f6f6,
-	            0 9px 1px -3px rgba(0, 0, 0, 0.2),
-	            0 16px 0 -6px #f6f6f6,
-	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
+		0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6,
+		0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 .todo-count {
@@ -503,7 +500,7 @@ html .clear-completed:active {
 	Can't use it globally since it destroys checkboxes in Firefox
 */
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
 	.toggle-all,
 	.todo-list li .toggle {
 		background: none;
@@ -523,6 +520,5 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
-
 
 /*# sourceMappingURL=styles.css.map*/

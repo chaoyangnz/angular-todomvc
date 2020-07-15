@@ -1,86 +1,84 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core'
 
-import {Todo} from '../model';
+import { Todo } from '../model'
 
 @Injectable()
 export class TodoService {
-
-	private static STORAGE_KEY = 'todos-angular-5';
-	private lastInsertId = 0;
-	private todos: Todo[] = [];
+	private static STORAGE_KEY = 'todos-angular-5'
+	private lastInsertId = 0
+	private todos: Todo[] = []
 
 	constructor() {
-		this.fetch();
+		this.fetch()
 		if (this.todos.length > 0) {
-			this.lastInsertId = this.todos[this.todos.length - 1].id;
+			this.lastInsertId = this.todos[this.todos.length - 1].id
 		}
 	}
 
 	create(todo: string): Todo {
-		todo =  todo.trim();
+		todo = todo.trim()
 		if (todo.length === 0) {
-			return;
+			return
 		}
-		const newTodo = new Todo(++this.lastInsertId, todo);
-		this.todos.push(newTodo);
-		this.save();
-		return newTodo;
+		const newTodo = new Todo(++this.lastInsertId, todo)
+		this.todos.push(newTodo)
+		this.save()
+		return newTodo
 	}
 
 	findAll() {
-		return this.todos;
+		return this.todos
 	}
 
 	update(todo: Todo) {
-		todo.title = todo.title.trim();
+		todo.title = todo.title.trim()
 		if (todo.title.length === 0) {
-			this.delete(todo);
+			this.delete(todo)
 		}
-		this.save();
+		this.save()
 	}
 
 	delete(todo: Todo) {
-		this.todos = this.todos.filter((t) => t !== todo);
-		this.save();
+		this.todos = this.todos.filter((t) => t !== todo)
+		this.save()
 	}
 
 	toggle(todo: Todo) {
-		todo.completed = !todo.completed;
-		this.save();
+		todo.completed = !todo.completed
+		this.save()
 	}
 
 	toggleAll(completed: boolean) {
-		this.todos.forEach((t) => t.completed = completed);
-		this.save();
+		this.todos.forEach((t) => (t.completed = completed))
+		this.save()
 	}
 
 	clearCompleted() {
-		this.todos = this.todos.filter((t) => !t.completed);
-		this.save();
+		this.todos = this.todos.filter((t) => !t.completed)
+		this.save()
 	}
 
 	remaining() {
-		return this.todos
-			.filter(t => !t.completed)
-			.length;
+		return this.todos.filter((t) => !t.completed).length
 	}
 
 	completed() {
-		return this.todos
-			.filter(t => t.completed)
-			.length;
+		return this.todos.filter((t) => t.completed).length
 	}
 
 	private fetch() {
-		const persistedValue = localStorage.getItem(TodoService.STORAGE_KEY);
+		const persistedValue = localStorage.getItem(TodoService.STORAGE_KEY)
 		try {
-			this.todos = JSON.parse(persistedValue || '[]');
+			this.todos = JSON.parse(persistedValue || '[]')
 		} catch (ignore) {
-			this.todos = [];
+			this.todos = []
 		}
 	}
 
 	private save(): void {
-		localStorage.setItem(TodoService.STORAGE_KEY, JSON.stringify(this.todos));
+		localStorage.setItem(
+			TodoService.STORAGE_KEY,
+			JSON.stringify(this.todos)
+		)
 	}
 }
